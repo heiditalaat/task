@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/heiditalaat/react-hello.git/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/heiditalaat/react-hello.git/static/js/main.dae7db82.chunk.js",
+    "main.js.map": "/heiditalaat/react-hello.git/static/js/main.dae7db82.chunk.js.map",
+    "runtime-main.js": "/heiditalaat/react-hello.git/static/js/runtime-main.969076a3.js",
+    "runtime-main.js.map": "/heiditalaat/react-hello.git/static/js/runtime-main.969076a3.js.map",
+    "static/js/2.ebcff924.chunk.js": "/heiditalaat/react-hello.git/static/js/2.ebcff924.chunk.js",
+    "static/js/2.ebcff924.chunk.js.map": "/heiditalaat/react-hello.git/static/js/2.ebcff924.chunk.js.map",
+    "static/js/3.485cf5ad.chunk.js": "/heiditalaat/react-hello.git/static/js/3.485cf5ad.chunk.js",
+    "static/js/3.485cf5ad.chunk.js.map": "/heiditalaat/react-hello.git/static/js/3.485cf5ad.chunk.js.map",
+    "index.html": "/heiditalaat/react-hello.git/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/heiditalaat/react-hello.git/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.ebcff924.chunk.js.LICENSE.txt": "/heiditalaat/react-hello.git/static/js/2.ebcff924.chunk.js.LICENSE.txt",
+    "static/media/associated_photo.340d2ec3.png": "/heiditalaat/react-hello.git/static/media/associated_photo.340d2ec3.png",
+    "static/media/logo.6ce24c58.svg": "/heiditalaat/react-hello.git/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.969076a3.js",
+    "static/js/2.ebcff924.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.dae7db82.chunk.js"
+  ]
+}
