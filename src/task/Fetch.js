@@ -1,3 +1,4 @@
+import { withStyles} from "@material-ui/core/styles";
 import React from 'react';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
@@ -6,12 +7,21 @@ import { MDBCol, MDBFormInline, MDBBtn } from "mdbreact";
 import Pagination from './Pagination';
 import Form from 'react-bootstrap/Form'
 
+const useStyles = theme => ({
+    text: { marginLeft:'5vw', marginRight:'5vw', color:'#90A0B7', fontSize:'13px', fontWeight:'500'},
+    text2: { marginLeft:'5vw', marginRight:'5vw', color:'#90A0B7', fontSize:'13px', fontWeight:'500'},  
+})
+
 export default function Fetch(props) {
-    const token = localStorage.getItem("user");
-        const [Customer, setCustomer] = useState([]);
         const [Orders, setOrders] = useState([]);
         const [currentPage, setCurrentPage] = useState(1);
         const [ordersPerPage, setOrdersPerPage] = useState(8);
+        //Get current orders
+        const indexOfLastOrder = currentPage*ordersPerPage;
+        const indexOfFirstOrder = indexOfLastOrder-ordersPerPage;
+        const currentOrders = Orders.slice(indexOfFirstOrder, indexOfLastOrder);   
+        //For styling
+        const classes = useStyles()
 
         useEffect(() => {
           axios
@@ -24,10 +34,7 @@ export default function Fetch(props) {
             .catch((err) => {});
         }, []);
 
-        //Get current orders
-        const indexOfLastOrder = currentPage*ordersPerPage;
-        const indexOfFirstOrder = indexOfLastOrder-ordersPerPage;
-        const currentOrders = Orders.slice(indexOfFirstOrder, indexOfLastOrder);
+    
 
   return (
         <div>
@@ -40,27 +47,28 @@ export default function Fetch(props) {
         <Card>
       
             <td>
-                <text style={{marginLeft:'5vw', marginRight:'5vw', color:'#90A0B7', fontSize:'13px', fontWeight:'500'}}>    ID number</text>
+                <text className={classes.text}>    ID number</text>
             </td>
 
             <td>
-            <text style={{marginLeft:'1.5vw', marginRight:'5vw', color:'#90A0B7', fontSize:'13px', fontWeight:'500'}}>  Name:</text>
+            <text className={classes.text}>  Name:</text>
             </td>
 
             <td>
-            <text style={{marginLeft:'5vw', marginRight:'5vw', color:'#90A0B7', fontSize:'13px', fontWeight:'500'}}>   Status</text>
+            <text className={classes.text}>   Status</text>
             </td>
 
             <td>
-            <text style={{marginLeft:'5vw', marginRight:'5vw', color:'#90A0B7', fontSize:'13px', fontWeight:'500'}}>    Supplier</text>
+            <text className={classes.text}>    Supplier</text>
             </td>
 
             <td>
-            <text style={{marginLeft:'5vw', marginRight:'5vw', color:'#90A0B7', fontSize:'13px', fontWeight:'500'}}>    Date</text>
+            <text className={classes.text}>    Date</text>
             </td>
         </Card>
 
         </tr>
+
         <tr>
         {currentOrders.map((item, index) => {
           return (
@@ -74,41 +82,33 @@ export default function Fetch(props) {
             </td>
 
             <td>
-            <text style={{marginLeft:'5vw', marginRight:'5vw', color:'#90A0B7', fontSize:'13px', fontWeight:'500'}}>     {Orders[index].customer.fname}</text>
+            <text className={classes.text2}> {Orders[index].customer.fname} </text>
             </td>
 
             <td>
-            <text style={{marginLeft:'6vw', marginRight:'5vw', color:'#90A0B7', fontSize:'13px', fontWeight:'500', textAlign:'left'}}>   {Orders[index].status}</text>
+            <text className={classes.text2}> {Orders[index].status} </text>
             </td>
 
             <td>
-            <text style={{marginLeft:'5vw', marginRight:'5vw', color:'#90A0B7', fontSize:'13px', fontWeight:'500'}}>    {Orders[index].supplier}</text>
+            <text className={classes.text}> {Orders[index].supplier} </text>
             </td>
 
             <td>
-            <text style={{marginLeft:'5vw', marginRight:'5vw', color:'#90A0B7', fontSize:'13px', fontWeight:'500'}}>    {Orders[index].created_at}</text>
+            <text className={classes.text}> {Orders[index].created_at} </text>
             </td>
-            {
-          //filter data
-          
+        { 
+        //To filter data
            currentOrders
             .filter(index => index > 3)
-            .map(index => <li>{index}</li>) 
-          
+            .map(index => <li>{index}</li>)  
         }
 
             </Card>
-                 )
-                })}
+        )
+        })}
         </tr>
      
         </table>
         </div>
-     
-        
-  
-
   );
-
 }
-

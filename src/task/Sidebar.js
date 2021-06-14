@@ -13,7 +13,7 @@ import logout from './images/toggle.png'
 
 export default function Sidebar() {
   return (
-        <div style={{}}>
+        <div>
             <Card>
                 <Card.Body>
                     <table>
@@ -83,8 +83,6 @@ export default function Sidebar() {
                     </button>
                 </tr>
 
-                <div style={{ borderTop: "#ffffff", marginLeft: '5vw', marginRight: '5vw'
-             }}></div>
              <div style={{marginTop:'3vw'}}>
              <tr>
                 <td style={{borderSpacing:'1vw'}}>

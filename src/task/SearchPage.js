@@ -3,6 +3,7 @@ import { MDBCol, MDBIcon } from "mdbreact";
 import search from './search.css'
 
 const SearchPage = () => {
+//To search by name
  const [name, setName] = useState("")
  
   return (
